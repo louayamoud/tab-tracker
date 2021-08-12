@@ -10,9 +10,9 @@ app.use(morgan('combined'))
 app.use(express.json())
 app.use(cors())
 
-app.get('/status', (req, res) => {
+app.post('/register', (req, res) => {
     res.send({
-        message: 'hello world'
+        message: 'Hello ${req.body.email} !Your user was registerd , Have fun !'
     })
 })
-app.listen(process.env.PORT ||8081)
+app.listen(process.env.PORT || 8081)
